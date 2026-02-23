@@ -7,7 +7,7 @@ st.set_page_config(
 )
 
 # ===== HEADER =====
-st.title("👨‍💻 Amos Marbun")
+st.image("screenshot.png")
 st.subheader("Python & Streamlit Developer")
 
 st.write("""
@@ -53,7 +53,7 @@ st.write("""
 Dashboard real-time untuk memantau performa operasional.
 """)
 
-st.link_button("🔗 Demo App", "https://demo.streamlit.app")
+st.link_button("🔗 Demo App", "https://jadwal-kerja-eqhfsftfwps6axdunrghan.streamlit.app")
 st.link_button("💻 Source Code", "https://github.com/username/project")
 
 st.markdown("")

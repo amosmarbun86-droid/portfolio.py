@@ -54,7 +54,7 @@ Dashboard real-time untuk memantau performa operasional.
 """)
 
 st.link_button("🔗 Demo App", "https://jadwal-kerja-eqhfsftfwps6axdunrghan.streamlit.app")
-st.link_button("💻 Source Code", "https://github.com/username/project")
+st.link_button("💻 Source Code", "https://codespaces.new/amosmarbun86-droid/jadwal-kerja")
 
 st.markdown("")
 

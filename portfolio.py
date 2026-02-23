@@ -84,7 +84,7 @@ st.header("📞 Kontak")
 
 st.write("📧 Email: amos.marbun86.@gmail.com")
 st.write("💼 GitHub: https://github.com/username")
-st.write("📱 WhatsApp: 085772366047)
+st.write("📱 WhatsApp: 085772366047")
 
 st.markdown("---")
 st.caption("© 2026 Amos Marbun")

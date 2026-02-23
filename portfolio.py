@@ -3,7 +3,7 @@ import streamlit as st
 # ===== CONFIG =====
 st.set_page_config(
     page_title="Amos Marbun | Portfolio",
-    page_icon="🚀",
+    page_icon="st.image("screenshot.png", width=180)",
     layout="wide"
 )
 

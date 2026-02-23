@@ -63,7 +63,7 @@ st.write("""
 Bot otomatis untuk alarm dan pengingat jadwal.
 """)
 
-st.link_button("🔗 Demo Bot", "https://t.me/yourbot")
+st.link_button("🔗 Demo Bot", "https://routealarmsiborong2026_bot")
 st.link_button("💻 Source Code", "https://github.com/username/project2")
 
 st.markdown("---")

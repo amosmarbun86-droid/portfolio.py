@@ -1,10 +1,21 @@
 import streamlit as st
 
-# ===== CONFIG =====
 st.set_page_config(
     page_title="Amos Marbun | Portfolio",
-    page_icon="st.image("screenshot.png", width=180)",
+    page_icon="🚀",
     layout="wide"
+)
+
+# ===== FOTO PROFIL =====
+col1, col2 = st.columns([1,3])
+
+with col1:
+    st.image("screenshot.png", width=180)
+
+with col2:
+    st.title("👨‍💻 Amos Marbun")
+    st.subheader("Python & Streamlit Developer")
+    st.write("Spesialis dashboard, automation, dan sistem operasional.")
 )
 
 # ===== CUSTOM CSS =====

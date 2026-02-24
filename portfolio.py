@@ -4,7 +4,6 @@ st.set_page_config(
     page_title="Amos Marbun | Portfolio",
     page_icon="🚀",
     layout="wide"
-)
 
 # ===== FOTO PROFIL =====
 col1, col2 = st.columns([1,3])

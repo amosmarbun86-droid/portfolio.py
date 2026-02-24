@@ -4,15 +4,6 @@ st.set_page_config(
     page_title="Amos Marbun Portfolio",
     page_icon="💼",
     layout="wide"
-)
-
-# ===== HERO SECTION (GLOBAL STYLE) =====
-import streamlit as st
-
-st.set_page_config(
-    page_title="Amos Marbun Portfolio",
-    page_icon="💼",
-    layout="wide"
 
     cta1, cta2 = st.columns(2)
     with cta1:

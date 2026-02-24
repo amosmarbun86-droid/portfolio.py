@@ -16,7 +16,6 @@ with col2:
     st.title("👨‍💻 Amos Marbun")
     st.subheader("Python & Streamlit Developer")
     st.write("Spesialis dashboard, automation, dan sistem operasional.")
-)
 
 # ===== CUSTOM CSS =====
 st.markdown("""

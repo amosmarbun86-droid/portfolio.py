@@ -1,128 +1,148 @@
 import streamlit as st
 
-# ===== PAGE CONFIG =====
+# =============================
+# PAGE CONFIG
+# =============================
 st.set_page_config(
-    page_title="Amos Marbun | Portfolio",
-    page_icon="💼",
+    page_title="Amos Marbun | Developer",
+    page_icon="🚀",
     layout="wide"
 )
 
-# ===== HERO SECTION =====
+# =============================
+# CUSTOM CSS (PREMIUM STYLE)
+# =============================
+st.markdown("""
+<style>
+.main {
+    background-color: #0e1117;
+}
+
+.big-title {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 22px;
+    color: #9aa0a6;
+}
+
+.card {
+    padding: 25px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #111827, #1f2937);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    margin-bottom: 25px;
+}
+
+.skill-card {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #161b22;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# =============================
+# HERO SECTION
+# =============================
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    st.image("screenshot.png", width=220)
+    st.image("screenshot.png", width=250)
 
 with col2:
-    st.title("Amos Marbun")
-    st.subheader("Python & Streamlit Developer")
+    st.markdown('<div class="big-title">Amos Marbun</div>', unsafe_allow_html=True)
+    st.markdown('<div class="subtitle">Python & Streamlit Engineer</div>', unsafe_allow_html=True)
+
     st.write(
-        "Spesialis dashboard monitoring, automation, dan sistem operasional berbasis web."
+        "Membangun sistem automation, dashboard monitoring, dan solusi operasional "
+        "berbasis web yang scalable dan efisien."
     )
 
-    cta1, cta2 = st.columns(2)
-    with cta1:
-        st.link_button("🚀 Lihat Project", "#project")
-    with cta2:
-        st.link_button("📞 Hubungi Saya", "#contact")
+    c1, c2 = st.columns(2)
+    with c1:
+        st.link_button("🚀 View Projects", "#projects")
+    with c2:
+        st.link_button("📩 Contact Me", "#contact")
 
 st.markdown("---")
 
-# ===== SKILL =====
-st.header("🛠️ Skill")
+# =============================
+# SKILLS
+# =============================
+st.markdown('<div class="section-title">🛠️ Skills</div>', unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.markdown("""
-    **Backend**
-    - Python
-    - Automation
-    - API Integration
-    """)
+    st.markdown('<div class="skill-card">🐍 Python<br>⚙️ Automation<br>🔌 API Integration</div>', unsafe_allow_html=True)
 
 with col2:
-    st.markdown("""
-    **Web & App**
-    - Streamlit
-    - Dashboard System
-    - Deploy Cloud
-    """)
+    st.markdown('<div class="skill-card">🌐 Streamlit<br>📊 Dashboard System<br>☁️ Cloud Deploy</div>', unsafe_allow_html=True)
 
 with col3:
-    st.markdown("""
-    **Data**
-    - Pandas
-    - Data Analysis
-    - CSV Processing
-    """)
+    st.markdown('<div class="skill-card">📈 Pandas<br>📂 CSV Processing<br>📊 Data Analysis</div>', unsafe_allow_html=True)
 
-st.markdown("---")
-
-# ===== PROJECT =====
-st.header("🚀 Project Unggulan")
+# =============================
+# PROJECTS
+# =============================
+st.markdown('<div class="section-title">🚀 Featured Projects</div>', unsafe_allow_html=True)
 
 # Project 1
-st.subheader("📊 Dashboard Monitoring Operasional")
-st.write(
-    "Dashboard real-time untuk memantau performa operasional dan jadwal kerja."
-)
+st.markdown('<div class="card">', unsafe_allow_html=True)
+st.subheader("📊 Operational Monitoring Dashboard")
+st.write("Real-time dashboard untuk monitoring performa operasional dan jadwal kerja.")
 
 p1, p2 = st.columns(2)
-
 with p1:
-    st.link_button(
-        "🔗 Demo App",
-        "https://jadwal-kerja-eqhfsftfwps6axdunrghan.streamlit.app"
-    )
-
+    st.link_button("🔗 Live Demo",
+        "https://jadwal-kerja-eqhfsftfwps6axdunrghan.streamlit.app")
 with p2:
-    st.link_button(
-        "💻 Source Code",
-        "https://github.com/amosmarbun86-droid/jadwal-kerja"
-    )
-
-st.markdown("")
+    st.link_button("💻 Source Code",
+        "https://github.com/amosmarbun86-droid/jadwal-kerja")
+st.markdown('</div>', unsafe_allow_html=True)
 
 # Project 2
-st.subheader("🤖 Sistem Notifikasi Telegram")
-st.write(
-    "Bot otomatis untuk alarm H-10, start loading, dan selesai loading."
-)
+st.markdown('<div class="card">', unsafe_allow_html=True)
+st.subheader("🤖 Telegram Alarm System")
+st.write("Bot otomatis alarm H-10, start loading, dan selesai loading untuk operasional logistik.")
 
 p1, p2 = st.columns(2)
-
 with p1:
-    st.link_button(
-        "🔗 Demo Bot",
-        "https://t.me/routealarmsiborong2026_bot"
-    )
-
+    st.link_button("🔗 Demo Bot",
+        "https://t.me/routealarmsiborong2026_bot")
 with p2:
-    st.link_button(
-        "💻 Source Code",
-        "https://github.com/amosmarbun86-droid/alarm-telegram-24jam"
-    )
+    st.link_button("💻 Source Code",
+        "https://github.com/amosmarbun86-droid/alarm-telegram-24jam")
+st.markdown('</div>', unsafe_allow_html=True)
 
-st.markdown("---")
-
-# ===== ABOUT =====
-st.header("👤 Tentang Saya")
+# =============================
+# ABOUT
+# =============================
+st.markdown('<div class="section-title">👤 About Me</div>', unsafe_allow_html=True)
 
 st.write(
-    "Developer yang fokus membangun solusi praktis untuk efisiensi kerja, "
-    "monitoring operasional, dan otomatisasi berbasis web. "
-    "Siap bekerja remote, freelance, maupun full-time."
+    "Saya adalah developer yang berfokus pada solusi automation dan monitoring sistem. "
+    "Berpengalaman membangun aplikasi berbasis Python & Streamlit untuk meningkatkan efisiensi kerja."
 )
 
-st.markdown("---")
-
-# ===== CONTACT =====
-st.header("📞 Kontak")
+# =============================
+# CONTACT
+# =============================
+st.markdown('<div class="section-title">📞 Contact</div>', unsafe_allow_html=True)
 
 st.write("📧 Email: amos.marbun86@gmail.com")
 st.write("💼 GitHub: https://github.com/amosmarbun86-droid")
 st.write("📱 WhatsApp: 085772366047")
 
 st.markdown("---")
-st.caption("© 2026 Amos Marbun — Portfolio")
+st.caption("© 2026 Amos Marbun — Premium Developer Portfolio")

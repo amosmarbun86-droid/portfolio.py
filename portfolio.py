@@ -171,8 +171,15 @@ elif page == "📞 Contact":
     st.markdown('<div class="section-title">📞 Contact</div>', unsafe_allow_html=True)
 
     st.write("📧 Email: amos.marbun86@gmail.com")
-    st.write("💼 GitHub: https://github.com/amosmarbun86-droid")
-    st.write("📱 WhatsApp: 085772366047")
+
+    st.link_button(
+        "💼 GitHub",
+        "https://github.com/amosmarbun86-droid"
+    )
+
+    st.link_button(
+    "📱 Chat WhatsApp",
+    "https://wa.me/6285772366047?text=Halo%20Amos,%20saya%20tertarik%20dengan%20portfolio%20Anda.")
 
 # =============================
 # FOOTER

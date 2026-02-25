@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 
 # =============================
 # PAGE CONFIG
@@ -10,49 +11,34 @@ st.set_page_config(
 )
 
 # =============================
-# CUSTOM CSS (CLEAN PREMIUM)
+# CSS PREMIUM CLEAN
 # =============================
 st.markdown("""
 <style>
-.main {
-    background-color: #0e1117;
-}
-
-.big-title {
-    font-size: 52px;
-    font-weight: 800;
-}
-
-.subtitle {
-    font-size: 22px;
-    color: #9aa0a6;
-    margin-bottom: 20px;
-}
-
-.section-title {
-    font-size: 30px;
-    font-weight: 700;
-    margin-top: 60px;
-    margin-bottom: 25px;
-}
-
-.card {
-    padding: 25px;
-    border-radius: 20px;
-    background: #161b22;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    margin-bottom: 25px;
-}
-
-.skill-card {
-    padding: 20px;
-    border-radius: 15px;
-    background-color: #111827;
-    text-align: center;
-    font-size: 16px;
-}
+.big-title {font-size: 52px; font-weight: 800;}
+.subtitle {font-size: 22px; color: #9aa0a6; margin-bottom: 20px;}
+.section-title {font-size: 30px; font-weight: 700; margin-top: 60px;}
+img {border-radius: 50%;}
 </style>
 """, unsafe_allow_html=True)
+
+# =============================
+# AUTO PROFILE IMAGE DETECTOR
+# =============================
+possible_images = [
+    "profile.png",
+    "profile.jpg",
+    "foto.png",
+    "foto.jpg",
+    "screenshot.png"
+]
+
+profile_image = None
+
+for img in possible_images:
+    if os.path.exists(img):
+        profile_image = img
+        break
 
 # =============================
 # HERO SECTION
@@ -60,7 +46,10 @@ st.markdown("""
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    st.markdown("## 👋")
+    if profile_image:
+        st.image(profile_image, width=260)
+    else:
+        st.info("👤 Foto profil belum ditambahkan")
 
 with col2:
     st.markdown('<div class="big-title">Amos Marbun</div>', unsafe_allow_html=True)
@@ -82,7 +71,7 @@ with col2:
     with c3:
         st.link_button(
             "📄 Download CV",
-            "https://drive.google.com/your-cv-link"
+            "https://drive.google.com"
         )
 
 st.markdown("---")
@@ -95,54 +84,28 @@ st.markdown('<div class="section-title">🛠️ Skills</div>', unsafe_allow_html
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.markdown('<div class="skill-card">🐍 Python<br>⚙️ Automation<br>🔌 API Integration</div>', unsafe_allow_html=True)
+    st.markdown("🐍 Python  \n⚙️ Automation  \n🔌 API Integration")
 
 with col2:
-    st.markdown('<div class="skill-card">🌐 Streamlit<br>📊 Dashboard System<br>☁️ Cloud Deploy</div>', unsafe_allow_html=True)
+    st.markdown("🌐 Streamlit  \n📊 Dashboard System  \n☁️ Cloud Deploy")
 
 with col3:
-    st.markdown('<div class="skill-card">📈 Pandas<br>📂 CSV Processing<br>📊 Data Analysis</div>', unsafe_allow_html=True)
+    st.markdown("📈 Pandas  \n📂 CSV Processing  \n📊 Data Analysis")
 
 # =============================
 # PROJECTS
 # =============================
 st.markdown('<div class="section-title" id="projects">🚀 Featured Projects</div>', unsafe_allow_html=True)
 
-# Project 1
-st.markdown('<div class="card">', unsafe_allow_html=True)
 st.subheader("📊 Operational Monitoring Dashboard")
 st.write("Real-time dashboard untuk monitoring performa operasional dan jadwal kerja.")
+st.link_button("🔗 Live Demo",
+    "https://jadwal-kerja-eqhfsftfwps6axdunrghan.streamlit.app")
 
-p1, p2 = st.columns(2)
-with p1:
-    st.link_button(
-        "🔗 Live Demo",
-        "https://jadwal-kerja-eqhfsftfwps6axdunrghan.streamlit.app"
-    )
-with p2:
-    st.link_button(
-        "💻 Source Code",
-        "https://github.com/amosmarbun86-droid/jadwal-kerja"
-    )
-st.markdown('</div>', unsafe_allow_html=True)
-
-# Project 2
-st.markdown('<div class="card">', unsafe_allow_html=True)
 st.subheader("🤖 Telegram Alarm System")
 st.write("Bot otomatis alarm H-10, start loading, dan selesai loading untuk operasional logistik.")
-
-p1, p2 = st.columns(2)
-with p1:
-    st.link_button(
-        "🔗 Demo Bot",
-        "https://t.me/routealarmsiborong2026_bot"
-    )
-with p2:
-    st.link_button(
-        "💻 Source Code",
-        "https://github.com/amosmarbun86-droid/alarm-telegram-24jam"
-    )
-st.markdown('</div>', unsafe_allow_html=True)
+st.link_button("🔗 Demo Bot",
+    "https://t.me/routealarmsiborong2026_bot")
 
 # =============================
 # ABOUT
@@ -150,8 +113,8 @@ st.markdown('</div>', unsafe_allow_html=True)
 st.markdown('<div class="section-title">👤 About Me</div>', unsafe_allow_html=True)
 
 st.write(
-    "Saya adalah developer yang berfokus pada automation system dan monitoring dashboard. "
-    "Berpengalaman membangun aplikasi berbasis Python & Streamlit untuk meningkatkan efisiensi operasional."
+    "Developer yang berfokus pada automation system dan monitoring dashboard "
+    "menggunakan Python & Streamlit."
 )
 
 # =============================
